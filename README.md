@@ -28,6 +28,8 @@ Access the deployed website via the links above. You can also clone the reposito
 
 Once accessed / deployed, access the browser console to see the analysis.
 
+![site preview](./preview.png)
+
 ## Credits
 
 N/A
