@@ -97,7 +97,8 @@ const netTotal = finances.reduce((total, current) => total + current[1], 0);
 let diff = 0, inc = 0, dec = 0, largestIncAmount = 0, largestIncMonthFrom, largestIncMonthTo, largestDecAmount = 0, largestDecMonthFrom, LargestDecMonthTo;
 for (let i = 0; i < finances.length - 1; i++) {
   // Find / add difference to accumulator
-  diff += Math.abs((finances[i][1] - finances[i + 1][1]));
+  //diff += Math.abs((finances[i][1] - finances[i + 1][1]));
+  diff += (finances[i + 1][1] - finances[i][1]);
 
   // Find increase, record if largest
   inc = finances[i + 1][1] - finances[i][1]
