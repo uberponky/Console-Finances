@@ -116,11 +116,13 @@ for (let i = 0; i < finances.length - 1; i++) {
   }
 }
 
+// Calculate average
 const avgChange = (diff / (finances.length - 1)).toFixed(2);
 
+// Log results to console
 console.log(`Financial Analysis
 ----------------
-Total months: ${count}
+Total Months: ${count}
 Total: $${netTotal}
 Average Change: $${avgChange}
 Greatest Increase in Profits/Losses: ${largestIncMonthFrom} - ${largestIncMonthTo} ($${largestIncAmount})
