@@ -109,8 +109,8 @@ for (let i = 0; i < finances.length - 1; i++) {
   }
 
   // Find decrease, record if largest
-  dec = finances[i][1] - finances[i + 1][1]
-  if (dec > largestDecAmount) {
+  dec = finances[i + 1][1] - finances[i][1]
+  if (dec < largestDecAmount) {
     largestDecAmount = dec;
     largestDecMonthFrom = finances[i][0];
     largestDecMonthTo = finances[i + 1][0];
@@ -126,6 +126,6 @@ console.log(`Financial Analysis
 Total Months: ${count}
 Total: $${netTotal}
 Average Change: $${avgChange}
-Greatest Increase in Profits/Losses: ${largestIncMonthFrom} - ${largestIncMonthTo} ($${largestIncAmount})
-Greatest Decrease in Profits/Losses: ${largestDecMonthFrom} - ${largestDecMonthTo} ($${largestDecAmount})
+Greatest Increase in Profits/Losses: ${largestIncMonthFrom} to ${largestIncMonthTo} ($${largestIncAmount})
+Greatest Decrease in Profits/Losses: ${largestDecMonthFrom} to ${largestDecMonthTo} ($${largestDecAmount})
 `);
