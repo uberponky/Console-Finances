@@ -94,23 +94,24 @@ const count = finances.length;
 const netTotal = finances.reduce((total, current) => total + current[1], 0);
 
 // Define variables for loop
-let diff = 0, inc = 0, dec = 0, largestIncAmount = 0, largestIncMonthFrom, largestIncMonthTo, largestDecAmount = 0, largestDecMonthFrom, LargestDecMonthTo;
+let diff = 0, change = 0, largestIncAmount = 0, largestIncMonthFrom, largestIncMonthTo, largestDecAmount = 0, largestDecMonthFrom, LargestDecMonthTo;
 for (let i = 0; i < finances.length - 1; i++) {
   // Find / add difference to accumulator
   diff += (finances[i + 1][1] - finances[i][1]);
 
-  // Find increase, record if largest
-  inc = finances[i + 1][1] - finances[i][1]
-  if (inc > largestIncAmount) {
-    largestIncAmount = inc;
+  // Find change in profit
+  change = finances[i + 1][1] - finances[i][1]
+
+  // Compare change, record if largest
+  if (change > largestIncAmount) {
+    largestIncAmount = change;
     largestIncMonthFrom = finances[i][0];
     largestIncMonthTo = finances[i + 1][0];
   }
 
-  // Find decrease, record if largest
-  dec = finances[i + 1][1] - finances[i][1]
-  if (dec < largestDecAmount) {
-    largestDecAmount = dec;
+  // Compare change, record if smallest
+  if (change < largestDecAmount) {
+    largestDecAmount = change;
     largestDecMonthFrom = finances[i][0];
     largestDecMonthTo = finances[i + 1][0];
   }
